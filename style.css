@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    font-size: large;
+
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+button{
+    background-color:white;
+    border-style: none;
+    width: 50px;
+    height:50px;
+}
+a{
+    font-size:100%;
+    font-weight: bold;
+}
+h2{
+    display: inline;
+    font-size: large;
+    color:#002647
+}
+
+h2,
+h3 {
+    color: #012E57;
+}
+
+p {
+    color: #012E57;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.info-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.info-table td,
+.info-table th {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+.info-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: #a3a2a2;
+    font-weight: 600;
+    background-color: #ffffff;
+}
+
+.user {
+    width: 4rem;
+    height: 4rem;
+}
+
+.profile {
+    margin-top: -5rem;
+    margin-left: 22.5rem;
+}
+
+@keyframes progress {
+    0% {
+        --percentage: 0;
+    }
+
+    100% {
+        --percentage: var(--value);
+    }
+}
+
+@property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+[role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #FCB000;
+    --secondary: #ffffff;
+    --size: 150px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 2 / 1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: 5rem;
+}
+
+[role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0.75turn at 50% 100%,
+            var(--primary) calc(var(--percentage) * 1% / 2),
+            var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%));
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "%";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--primary);
+}
+
+.container {
+    background-color: #002647;
+    width: 27rem;
+    height: 10rem;
+    padding: 0.1rem;
+    border-radius: 1.5rem;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.484), 0 6px 20px 0 rgba(0, 0, 0, 0.379);
+}
+
+.container h3 {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.graph {
+    width: 4.4rem;
+    height: 2.3rem;
+    margin-left: -8rem;
+    border-radius: 0.5rem;
+}
+
+.test {
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: flex-end;
+    margin-top: -5rem;
+}
+
+.icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    object-fit: cover;
+}
+
+hr {
+    border: 1px solid rgb(152, 152, 152);
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 80%;
+        padding: 5px;
+    }
+
+    [role="progressbar"] {
+        width: 120px;
+    }
+}
