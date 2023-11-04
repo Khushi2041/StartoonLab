@@ -1,4 +1,2 @@
 # StartoonLab
-'''bash
-cd /atartoonLab 
-'''
+A web page designed with HTML and CSS serves as a patient profile dashboard, displaying comprehensive health information. This visually appealing interface provides essential data about the patient's medical history, current conditions, prescribed medications, and upcoming appointments. The user-friendly design ensures easy navigation, allowing healthcare professionals to access and update patient records efficiently. It offers a seamless experience for tracking and managing the patient's health, promoting effective healthcare management and personalized care.
